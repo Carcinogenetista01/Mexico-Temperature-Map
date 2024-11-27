@@ -1,0 +1,12 @@
+streamlit
+geopandas
+plotly
+numpy
+pandas
+matplotlib
+pyproj
+shapely
+fiona
+flask
+Werkzeug
+gunicorn
