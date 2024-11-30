@@ -69,14 +69,26 @@ def get_file_path(relative_path):
 
 @st.cache_data
 def load_estados_geojson():
-    file_path = get_file_path('mexicoHigh.json')
-    with open(file_path, 'r', encoding='utf-8') as file:
-        estados_geojson = json.load(file)
-        gdf_estados = gpd.GeoDataFrame.from_features(estados_geojson['features'])
-        gdf_estados = gdf_estados.set_crs(epsg=4326, inplace=True)
-        gdf_estados['temperatura'] = np.random.uniform(10, 35, len(gdf_estados))
-        return gdf_estados
-
+    # URL autenticada
+    url = 'https://storage.cloud.google.com/munbdr/municipios_limpios.geojson'
+    
+    # Descargar y cargar el archivo GeoJSON
+    response = requests.get(url)
+    response.raise_for_status()  # Verifica que no haya errores en la respuesta
+    
+    estados_geojson = response.json()
+    
+    # Crear el GeoDataFrame
+    gdf_estados = gpd.GeoDataFrame.from_features(estados_geojson['features'])
+    
+    # Asignar el sistema de coordenadas (CRS)
+    gdf_estados.set_crs(epsg=4326, inplace=True)
+    
+    # Agregar columna de temperatura con valores aleatorios
+    gdf_estados['temperatura'] = np.random.uniform(10, 35, len(gdf_estados))
+    
+    return gdf_estados
+    
 st.markdown("""
     <h1 style='text-align: center; color: #3498DB; animation: fadeIn 2s;'>
         🌡️ Mapa de Temperatura de México
