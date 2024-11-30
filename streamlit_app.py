@@ -69,7 +69,7 @@ def get_file_path(relative_path):
 
 @st.cache_data
 def load_estados_geojson():
-    file_path = get_file_path('data/geojson-master/mexicoHigh.json')
+    file_path = get_file_path('mexicoHigh.json')
     with open(file_path, 'r', encoding='utf-8') as file:
         estados_geojson = json.load(file)
         gdf_estados = gpd.GeoDataFrame.from_features(estados_geojson['features'])
@@ -98,21 +98,21 @@ st.markdown("""
 
 @st.cache_data
 def load_clima_data():
-    file_path = get_file_path('data/ClimaOut.json')
+    file_path = get_file_path('ClimaOut.json')
     with open(file_path, 'r') as file:
         clima_data = json.load(file)
     return clima_data
 
 @st.cache_data
 def load_estados_data():
-    file_path = get_file_path('data/AtrOut.json')
+    file_path = get_file_path('AtrOut.json')
     with open(file_path, 'r') as file:
         estados_data = json.load(file)['atrClean']
     return {estado['ides']: estado['nes'] for estado in estados_data}
 
 @st.cache_data
 def load_municipios_data():
-    file_path = get_file_path('data/munOut.json')
+    file_path = get_file_path('munOut.json')
     with open(file_path, 'r') as file:
         municipios_data = json.load(file)
     return municipios_data
@@ -120,7 +120,7 @@ def load_municipios_data():
 
 @st.cache_data
 def load_geojson_data():
-    file_path = get_file_path('data/geojson-master/municipios_limpios.geojson')
+    file_path = get_file_path('municipios_limpios.geojson')
     with open(file_path, 'r', encoding='utf-8') as file:
         geojson_data = json.load(file)
 
