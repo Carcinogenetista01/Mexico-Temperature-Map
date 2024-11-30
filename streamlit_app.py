@@ -71,7 +71,7 @@ def get_file_path(relative_path):
 @st.cache_data
 def load_estados_geojson():
     # URL autenticada
-    url = 'https://storage.cloud.google.com/munbdr/municipios_limpios.geojson'
+    url = 'https://storage.cloud.google.com/publicomun/municipios_limpios.geojson'
     
     # Descargar y cargar el archivo GeoJSON
     response = requests.get(url)
