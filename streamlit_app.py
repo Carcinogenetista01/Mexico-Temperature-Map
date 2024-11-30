@@ -5,6 +5,7 @@ import json
 import numpy as np
 from datetime import datetime
 import os
+import requests 
 
 # Wrap your Streamlit app with Flask
 def main():
