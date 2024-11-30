@@ -194,6 +194,19 @@ except Exception as e:
 # Carga de datos
 with st.spinner('Cargando datos...'):
     gdf = load_geojson_data()
+    
+def get_center_and_zoom(gdf, nivel, selected_area=None, selected_municipio=None):
+    if nivel == 'General':
+        return {"lat": 23.6345, "lon": -102.5528}, 4
+    elif nivel == 'Estado':
+        area_gdf = gdf[gdf['NAME_1'] == selected_area]
+        bounds = area_gdf.total_bounds
+        return {"lat": (bounds[1] + bounds[3]) / 2, "lon": (bounds[0] + bounds[2]) / 2}, 6
+    else:
+        mun_gdf = gdf[(gdf['NAME_1'] == selected_area) & (gdf['NAME_2'] == selected_municipio)]
+        centroid = mun_gdf.geometry.centroid.iloc[0]
+        return {"lat": centroid.y, "lon": centroid.x}, 8
+
 
 def get_center_and_zoom(gdf, nivel, selected_area=None, selected_municipio=None):
     if nivel == 'General':
