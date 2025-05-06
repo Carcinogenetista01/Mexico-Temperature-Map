@@ -1,28 +1,28 @@
-# 🌡️ Mapa de Temperatura de México
+# 🌡️ Mexico Temperature Map
 
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![GeoPandas](https://img.shields.io/badge/GeoPandas-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
 
-Aplicación web interactiva que visualiza temperaturas en México a diferentes niveles geográficos (nacional, estatal y municipal) utilizando Streamlit, GeoPandas y Plotly.
+Interactive web application that visualizes temperature data across Mexico at different geographic levels (national, state, and municipal) using Streamlit, GeoPandas, and Plotly.
 
-## 🚀 Características principales
+## 🚀 Key Features
 
-- **Visualización jerárquica**: Navega entre vistas generales de todo México, por estado o por municipio
-- **Datos interactivos**: 
-  - Mapa coroplético con escala de colores para temperaturas
-  - Gráficos de distribución de temperaturas
-  - Dashboard de temperaturas máximas por municipio
-- **Estadísticas en tiempo real**: 
-  - Temperaturas mínimas, máximas y promedio
-  - Conteo de municipios por área seleccionada
-- **Diseño responsive**: Adaptable a diferentes dispositivos con modo claro/oscuro
-- **Filtros avanzados**: 
-  - Selección por fecha y hora
-  - Navegación por niveles geográficos
+- **Hierarchical visualization**: Navigate between country-wide, state-level, or municipal views
+- **Interactive data**:
+  - Choropleth map with temperature color scale
+  - Temperature distribution charts
+  - Municipal maximum temperature dashboard
+- **Real-time statistics**:
+  - Minimum, maximum, and average temperatures
+  - Municipality counts by selected area
+- **Responsive design**: Adapts to different devices with light/dark mode
+- **Advanced filters**:
+  - Date and time selection
+  - Geographic level navigation
 
-## 📦 Requisitos
+## 📦 Requirements
 
 - Python 3.8+
 - Streamlit
@@ -31,63 +31,63 @@ Aplicación web interactiva que visualiza temperaturas en México a diferentes n
 - NumPy
 - Requests
 
-Instala las dependencias con:
+Install dependencies with:
 ```bash
 pip install -r requirements.txt
 ```
 
-## 🛠️ Configuración
+## 🛠️ Setup
 
-1. Clona el repositorio:
+1. Clone the repository:
 ```bash
-git clone https://github.com/tu-usuario/mapa-temperatura-mexico.git
-cd mapa-temperatura-mexico
+git clone https://github.com/your-username/mexico-temperature-map.git
+cd mexico-temperature-map
 ```
 
-2. Instala las dependencias:
+2. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Ejecuta la aplicación:
+3. Run the application:
 ```bash
 streamlit run app.py
 ```
 
-## 🗺️ Estructura de archivos
+## 🗺️ File Structure
 
 ```
-├── app.py                # Aplicación principal
-├── ClimaOut.json         # Datos climáticos
-├── AtrOut.json           # Atributos de estados
-├── munOut.json           # Datos de municipios
-├── municipios_limpios.geojson  # Datos geoespaciales
+├── app.py                # Main application
+├── ClimaOut.json         # Climate data
+├── AtrOut.json           # State attributes
+├── munOut.json           # Municipal data
+├── municipios_limpios.geojson  # Geospatial data
 └── README.md
 ```
 
-## 📊 Funcionamiento
+## 📊 How It Works
 
-La aplicación carga datos geoespaciales de México y los combina con datos de temperatura simulados. Los usuarios pueden:
+The application loads geospatial data of Mexico combined with simulated temperature data. Users can:
 
-1. Seleccionar el nivel de visualización (General, Estado o Municipio)
-2. Filtrar por estado y municipio
-3. Ver estadísticas de temperatura
-4. Explorar el mapa interactivo
-5. Analizar distribuciones de temperatura
+1. Select visualization level (Country, State, or Municipality)
+2. Filter by state and municipality
+3. View temperature statistics
+4. Explore the interactive map
+5. Analyze temperature distributions
 
-## 🌟 Contribuciones
+## 🌟 Contributions
 
-¡Las contribuciones son bienvenidas! Por favor abre un issue o envía un pull request para:
+Contributions are welcome! Please open an issue or submit a pull request for:
 
-- Mejorar la visualización de datos
-- Añadir datos reales de temperatura
-- Implementar nuevas funcionalidades
+- Improving data visualization
+- Adding real temperature data
+- Implementing new features
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto está bajo la licencia MIT. Ver [LICENSE](LICENSE) para más detalles.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ---
 
-Desarrollado con ❤️ por Abril Montaño  
-© 2023 Mapa de Temperatura de México
+Developed with ❤️ by Abril Montaño  
+© 2023 Mexico Temperature Map
